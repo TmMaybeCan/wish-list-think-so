@@ -1,0 +1,64 @@
+* {
+    font-family: "Audiowide", cursive;
+  }
+  body {
+    background-color: pink;
+  }
+  #app {
+    background-color: lightblue;
+    padding: 5px;
+    width: 400px;
+    height: auto;
+    border-radius: 10px;
+    background-image: linear-gradient(to right top, pink, lightblue);
+    margin-left: 40%;
+    h2 {
+      color: darken(pink, 10%);
+      text-align: center;
+      padding-top: 5px;
+    }
+  //mixins:-----------
+    @mixin fontSize {
+      font-size: 17px;
+    }
+    @mixin mainColor {
+      color: #5a5a5a;
+    }
+    @mixin outline {
+      outline: none;
+    }
+  //------------------
+    input {
+      margin-left: 10px;
+      border: none;
+      padding: 2px;
+      border-radius: 3px;
+      @include mainColor;
+      @include fontSize;
+      &::placeholder {
+        opacity: 0.4;
+      }
+      &:focus {
+        @include outline;
+      }
+    }
+    li {
+      @include mainColor;
+      @include fontSize;
+    }
+    button {
+      @include mainColor;
+      @include fontSize;
+      @include outline;
+      border: none;
+      background-color: #fff;
+      border-radius: 3px;
+      padding: 2px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    .remove-btn {
+        background-color: transparent;
+      }
+  }

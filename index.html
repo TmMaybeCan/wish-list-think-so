@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
+    <link href="https://unpkg.com/ionicons@4.4.4/dist/css/ionicons.min.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h2><i class="icon ion-md-paper"></i> Wish list <i class="icon ion-md-paper"></i></h2>
+        <input type="text" v-model="message" placeholder="your wish..." @keyup.13="addWish">
+        <button @click="addWish" v-if="">Add</button>
+        <button @click="resetWish">Reset</button>
+        <ol>
+          <li v-for="wish in wishes">{{wish}} <button class="remove-btn" @click="remove"><i class="icon ion-md-trash"></i></button></li>
+        </ol>
+      </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.7/dist/vue.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
